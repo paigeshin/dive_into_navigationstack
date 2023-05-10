@@ -167,6 +167,13 @@ struct Game: Hashable {
 ### NavigationPath (NavigationPath())
 
 ```swift
+//
+//  ContentView.swift
+//  ProgrammaticNavigation
+//
+//  Created by paige shin on 2023/05/11.
+//
+
 import SwiftUI
 
 struct ContentView: View {
@@ -243,6 +250,7 @@ struct ContentView: View {
                     
                     Button("Go Home") {
                         self.path.removeLast()
+//                        self.path.removeLast(self.path.count)
 //                        self.path.removeLast(2)
                     }
                 }
