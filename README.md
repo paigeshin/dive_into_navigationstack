@@ -167,6 +167,8 @@ struct Game: Hashable {
 ### NavigationPath (NavigationPath())
 
 ```swift
+import SwiftUI
+
 struct ContentView: View {
     
     var platforms: [Platform] = [
@@ -227,8 +229,24 @@ struct ContentView: View {
                 }
             }
             .navigationDestination(for: Game.self) { game in
-                Text("\(game.name) - \(game.rating)")
-                    .font(.largeTitle.bold())
+                VStack(spacing: 20) {
+                    Text("\(game.name) - \(game.rating)")
+                        .font(.largeTitle.bold())
+                    
+                    Button("Recommended Game") {
+                        self.path.append(self.games.randomElement()!)
+                    }
+                    
+                    Button("Go to another platform") {
+                        self.path.append(self.platforms.randomElement()!)
+                    }
+                    
+                    Button("Go Home") {
+                        self.path.removeLast()
+//                        self.path.removeLast(2)
+                    }
+                }
+                
             }
         } //: NavigationStack
 
@@ -251,5 +269,6 @@ struct Game: Hashable {
     let name: String
     let rating: String
 }
+
 
 ```
