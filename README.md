@@ -1,5 +1,7 @@
 # dive_into_navigationstack
 
+1. You need to pass `hashable` to link [NavigationLink(value: ...)] and attach navigation destination modifier to receive the value and route  
+2. Or you can create global `Path` Object which is also hashable and attach navigation destination modifier to receive the path and route 
 
 ### Basic
 
